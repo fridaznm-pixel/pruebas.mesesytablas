@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica Meses y Tabla de Multiplicar</title>
+
+    <script>
+        function mostrarMeses() {
+            let meses = [
+                "enero", "febrero", "marzo", "abril",
+                "mayo", "junio", "julio", "agosto",
+                "septiembre", "octubre", "noviembre", "diciembre"
+            ];
+
+            let texto = "";
+
+            for (let i = 0; i < meses.length; i++) {
+                texto += "mes " + (i + 1) + ": " + meses[i] + "<br>";
+            }
+
+            texto += "<br>para volver a iniciar las funciones recarga la página";
+
+            document.getElementById("resultadoMeses").innerHTML = texto;
+        }
+
+        function tablaMultiplicar() {
+            let num = document.getElementById("numero").value;
+            let resultado = "";
+
+            if (num != "") {
+                for (let i = 1; i <= 10; i++) {
+                    resultado += num + " x " + i + " = " + (num * i) + "<br>";
+                }
+
+                document.getElementById("resultadoTabla").innerHTML = resultado;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <p>
+        <b>Instrucciones:</b> En esta página hay dos funciones, cada una tiene sus instrucciones,
+        para volver a iniciar las funciones recarga la página.
+    </p>
+
+    <hr>
+
+    <h2>Meses del Año</h2>
+    <button onclick="mostrarMeses()">Mostrar meses</button>
+
+    <br><br>
+
+    <div id="resultadoMeses"></div>
+
+    <hr>
+
+    <h2>Tabla de Multiplicar</h2>
+
+    <label>Escribe un número:</label>
+    <input type="number" id="numero">
+
+    <button onclick="tablaMultiplicar()">Mostrar tabla</button>
+
+    <br><br>
+
+    <div id="resultadoTabla"></div>
+
+</body>
+</html>
